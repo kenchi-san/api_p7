@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+:Main Guest: as Admin
+(Use the private API) as (PA)
+(Liste User) as (LU)
+(Detail User) as (DU)
+(Add New User) as (ANU)
+(Delete Some Users) as (DSU)
+(Consult All Products) as (CAP)
+(Consult Details Products) as (CDP)
+
+Admin->(Start)
+Admin->(PA)
+
+(PA)-->(LU)
+(PA)-->(DU)
+(PA)-->(ANU)
+(PA)-->(DSU)
+(PA)-->(CAP)
+(PA)-->(CDP)
+
+
+
+note left of Admin : BileMo.
+
+note "Main guests connection" as N1
+(Start) .. N1
+N1 .. (PA)
+@enduml
