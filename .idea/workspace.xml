@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="init projet">
-      <change afterPath="$PROJECT_DIR$/.idea/api_p7.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210929133542.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210929134530.php" afterDir="false" />
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="feat(setup config)">
       <change afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/customer/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/364ea4aa-0268-4c44-a3b4-732b5dffc882.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/364ea4aa-0268-4c44-a3b4-732b5dffc882.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PhoneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PhoneController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Phone.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPhone.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PhoneRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductPhoneRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,8 +172,23 @@
       <workItem from="1632871828264" duration="4626000" />
       <workItem from="1632921591120" duration="3362000" />
       <workItem from="1632938048531" duration="1228000" />
-      <workItem from="1633008653372" duration="3984000" />
+      <workItem from="1633008653372" duration="4486000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
+      <created>1633017315570</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1633017315570</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat(setup config)">
+      <created>1633017407763</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1633017407763</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +208,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init projet" />
-    <option name="LAST_COMMIT_MESSAGE" value="init projet" />
+    <MESSAGE value="feat(request listPhone,detailPhone,entity,repo) close #1" />
+    <MESSAGE value="feat(setup config)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(setup config)" />
   </component>
 </project>
