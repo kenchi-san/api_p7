@@ -11,7 +11,10 @@
       <user-name>root</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="schema" qname="api_p7" />
+          <node kind="schema">
+            <name qname="api_p7" />
+            <name qname="snowtricks" />
+          </node>
         </introspection-scope>
       </schema-mapping>
     </data-source>
