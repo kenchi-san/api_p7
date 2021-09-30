@@ -2,19 +2,47 @@
 
 namespace App\Controller;
 
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
 {
     /**
-     * @Route("/user", name="user")
+     * @Route("api/user", name="user")
+     * @param UserRepository $userRepository
+     * @param SerializerInterface $serializer
+     * @return Response
      */
-    public function index(): Response
+    public function index(UserRepository $userRepository, SerializerInterface $serializer): Response
     {
-        return $this->render('user/index.html.twig', [
-            'controller_name' => 'UserController',
-        ]);
+        $listUser = $userRepository->findAll();
+        $jsonContent =$serializer->serialize($listUser,'json');
+        $response = new Response($jsonContent);
+
+        $response->headers->set('Content-Type', 'application/json');
+        $response->setMaxAge(3600);
+        return $response;
     }
+
+    /**
+     * @Route ("/api/user/{id}",name="detail_user")
+     * @param Request $request
+     * @param UserRepository $phone
+     * @param SerializerInterface $serializer
+     * @return Response
+     */
+    public function detail(Request $request, UserRepository $phone, SerializerInterface $serializer): Response
+    {
+        $showPhone = $phone->find($request->get('id'));
+        $jsonContent = $serializer->serialize($showPhone, 'json');
+        $response = new Response($jsonContent);
+        $response->setMaxAge(3600);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
+
 }

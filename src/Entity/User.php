@@ -17,23 +17,38 @@ class User
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @
      */
-    private $name;
+    private ?string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $email;
+    private ?string $email;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $username;
+    private ?string $surname;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $password;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $position_in_the_compagny;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private array $role = [];
 
     public function getId(): ?int
     {
@@ -64,14 +79,50 @@ class User
         return $this;
     }
 
-    public function getUsername(): ?string
+    public function getSurname(): ?string
     {
-        return $this->username;
+        return $this->surname;
     }
 
-    public function setUsername(string $username): self
+    public function setSurname(string $surname): self
     {
-        $this->username = $username;
+        $this->surname = $surname;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getPositionInTheCompagny(): ?string
+    {
+        return $this->position_in_the_compagny;
+    }
+
+    public function setPositionInTheCompagny(string $position_in_the_compagny): self
+    {
+        $this->position_in_the_compagny = $position_in_the_compagny;
+
+        return $this;
+    }
+
+    public function getRole(): ?array
+    {
+        return $this->role;
+    }
+
+    public function setRole(array $role): self
+    {
+        $this->role = $role;
 
         return $this;
     }
