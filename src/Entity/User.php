@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User
 {
+
+
+    public function __construct()
+    {
+        $this->role = ["ROLE_USER"];
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

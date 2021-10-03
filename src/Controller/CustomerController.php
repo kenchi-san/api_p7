@@ -78,8 +78,7 @@ class CustomerController extends AbstractController
     public function delete(Request $request,SerializerInterface $serializer,CustomerRepository $customerRepository, EntityManagerInterface $manager): Response
     {
         $customer=$customerRepository->find($request->get('id'));
-        dd(gettype($customer));
-        $serializer->deserialize();
+
         $manager->remove($customer);
         return new Response("", Response::HTTP_FOUND);
 
