@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="fix(update Customer) #2">
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/api_p7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api_p7.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="feat(fixtures) #5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210929133542.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210929134530.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210930135455.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210930135827.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210930161124.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +171,7 @@
       <workItem from="1632938048531" duration="1228000" />
       <workItem from="1633008653372" duration="7926000" />
       <workItem from="1633094310995" duration="10747000" />
-      <workItem from="1633270655415" duration="5797000" />
+      <workItem from="1633270655415" duration="10850000" />
     </task>
     <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
       <created>1633017315570</created>
@@ -229,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633272587311</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat(fixtures) #5">
+      <created>1633277821550</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633277821550</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +248,7 @@
     <MESSAGE value="feat(request listUser,detailUser,entity,repo) close #4" />
     <MESSAGE value="fix(forgot migration)" />
     <MESSAGE value="fix(update Customer) #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(update Customer) #2" />
+    <MESSAGE value="feat(fixtures) #5" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(fixtures) #5" />
   </component>
 </project>
