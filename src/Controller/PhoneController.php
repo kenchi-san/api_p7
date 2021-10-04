@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 class PhoneController extends AbstractController
 {
     /**
-     * @Route("api/phone", name="phone")
+     * @Route("api/phone", name="phone",methods={"GET"})
      * @param ProductPhoneRepository $phoneRepository
      * @param SerializerInterface $serializer
      * @return Response
@@ -31,7 +31,7 @@ class PhoneController extends AbstractController
     }
 
     /**
-     * @Route ("/api/phone/{id}",name="detail_phone")
+     * @Route ("/api/phone/{id}",name="detail_phone",methods={"GET"})
      * @param Request $request
      * @param ProductPhoneRepository $phone
      * @param SerializerInterface $serializer
