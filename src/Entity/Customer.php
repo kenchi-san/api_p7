@@ -15,45 +15,49 @@ class Customer
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"user"})
      */
     private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user"})
+     * @Groups({"customer:list","customer:detail","customer:add"})
      */
     private ?string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user"})
+     * @Groups({"customer:list","customer:detail","customer:add"})
      */
     private ?string $surname;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user"})
+     * @Groups({"customer:detail","customer:add"})
      */
     private ?string $mail;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"user"})
+     * @Groups({"customer:detail","customer:add"})
      */
     private ?string $address;
 
     /**
      * @ORM\Column(type="integer")
-     * @Groups({"user"})
+     * @Groups({"customer:detail","customer:add"})
      */
     private ?int $phone;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user"})
+     * @Groups({"customer:detail","customer:add"})
      */
     private ?string $membership_number;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="customer")
+     */
+    private $user;
 
     public function getId(): ?int
     {
@@ -128,6 +132,18 @@ class Customer
     public function setMembershipNumber(string $membership_number): self
     {
         $this->membership_number = $membership_number;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
