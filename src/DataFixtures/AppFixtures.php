@@ -8,12 +8,21 @@ use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\PasswordHasher\PasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
     const CUSTOMER_FAKE_NUMBER = 10;
     const PRODUCT_FAKE_NUMBER = 10;//max 10
     const USER_FAKE_NUMBER = 3;
+    private UserPasswordHasherInterface $userPasswordHasher;
+
+    public function __construct(UserPasswordHasherInterface $userPasswordHasher)
+    {
+        $this->userPasswordHasher = $userPasswordHasher;
+    }
+
     public function load(ObjectManager $manager)
     {
 
@@ -44,10 +53,10 @@ class AppFixtures extends Fixture
         while ($u <= self::USER_FAKE_NUMBER) {
 
             $user = new User();
-            $user->setName($faker->firstName);
-            $user->setSurname($faker->lastName);
-            $user->setEmail($faker->email);
-            $user->setPassword("bibi");
+            $user->setName("user".$u);
+            $user->setSurname("surname".$u);
+            $user->setEmail("user".$u."@gmail.com");
+            $user->setPassword($this->userPasswordHasher->hashPassword($user, "bibi"));
             $user->setPositionInTheCompagny($faker->jobTitle);
             $manager->persist($user);
             $u++;
