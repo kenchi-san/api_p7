@@ -45,10 +45,8 @@ class CustomerController extends AbstractController
      */
     public function detail(Request $request, CustomerRepository $customerRepository, SerializerInterface $serializer): Response
     {
-
         return $this->json($customerRepository->find($request->get('id')),200,[],["groups"=>"customer:detail"]);
 
-        //TODO reponse vide ?
 //        $showCustomer = $customerRepository->find($request->get('id'));
 //        $jsonContent = $serializer->serialize(
 //            $showCustomer,
@@ -65,11 +63,11 @@ class CustomerController extends AbstractController
      */
     public function add(Request $request, SerializerInterface $serializer, EntityManagerInterface $manager): Response
     {
-        //TODO corriger
-        $objContent = $serializer->deserialize($request->getContent(), Customer::class, 'json',["groups"=>"customer:add"]);
-        $manager->persist($objContent);
+        $customer = $serializer->deserialize($request->getContent(), Customer::class, 'json',["groups"=>"customer:add"]);
+        $manager->persist($customer);
+        $test = $serializer->serialize($customer,"json",["groups"=>"customer:detail"]);
         $manager->flush();
-        return new Response('', Response::HTTP_CREATED);
+        return new JsonResponse($test, Response::HTTP_CREATED);
 
     }
 
