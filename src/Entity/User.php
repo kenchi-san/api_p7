@@ -6,19 +6,20 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class User
+class User implements UserInterface
 {
 
 
     public function __construct()
     {
-        $this->role = ["ROLE_USER"];
+        $this->roles = ["ROLE_USER"];
         $this->customer = new ArrayCollection();
     }
 
@@ -61,7 +62,7 @@ class User
     /**
      * @ORM\Column(type="json")
      */
-    private array $role = [];
+    private array $roles = [];
 
     /**
      * @ORM\OneToMany(targetEntity=Customer::class, mappedBy="user")
@@ -135,14 +136,14 @@ class User
         return $this;
     }
 
-    public function getRole(): ?array
+    public function getRoles(): ?array
     {
-        return $this->role;
+        return $this->roles;
     }
 
-    public function setRole(array $role): self
+    public function setRoles(array $roles): self
     {
-        $this->role = $role;
+        $this->roles = $roles;
 
         return $this;
     }
@@ -175,5 +176,27 @@ class User
         }
 
         return $this;
+    }
+
+
+
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getUserIdentifier()
+    {
+        return $this->email;
+    }
+
+    public function getUsername()
+    {
+        return $this->email;
     }
 }
