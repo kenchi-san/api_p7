@@ -13,6 +13,8 @@
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.9",
         "fzaninotto/faker": "^1.9",
+        "jms/serializer": "^3.14",
+        "jms/serializer-bundle": "^3.10",
         "lexik/jwt-authentication-bundle": "^2.13",
         "nelmio/cors-bundle": "^2.1",
         "phpdocumentor/reflection-docblock": "^5.2",
@@ -33,7 +35,8 @@
         "symfony/twig-bundle": "5.3.*",
         "symfony/validator": "5.3.*",
         "symfony/yaml": "5.3.*",
-        "willdurand/hateoas": "^3.7"
+        "willdurand/hateoas": "^3.7",
+        "willdurand/hateoas-bundle": "^2.2"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4",
