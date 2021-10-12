@@ -21,6 +21,7 @@ class AppFixtures extends Fixture
     public function __construct(UserPasswordHasherInterface $userPasswordHasher)
     {
         $this->userPasswordHasher = $userPasswordHasher;
+        $this->faker = Faker\Factory::create('fr_FR');
     }
 
     public function load(ObjectManager $manager)
@@ -35,20 +36,6 @@ class AppFixtures extends Fixture
         foreach ($product["listPhone"] as $key=>$value){
             $AllPhones[]=$value;
         }
-        $faker = Faker\Factory::create('fr_FR');
-        $c = 0;
-        while ($c <= self::CUSTOMER_FAKE_NUMBER) {
-
-            $customer = new Customer();
-            $customer->setName($faker->firstName);
-            $customer->setSurname($faker->lastName);
-            $customer->setAddress($faker->address);
-            $customer->setMail($faker->email);
-            $customer->setPhone(125698534);
-            $customer->setMembershipNumber($faker->swiftBicNumber);
-            $manager->persist($customer);
-            $c++;
-        }
         $u = 0;
         while ($u <= self::USER_FAKE_NUMBER) {
 
@@ -57,23 +44,45 @@ class AppFixtures extends Fixture
             $user->setSurname("surname".$u);
             $user->setEmail("user".$u."@gmail.com");
             $user->setPassword($this->userPasswordHasher->hashPassword($user, "bibi"));
-            $user->setPositionInTheCompagny($faker->jobTitle);
+            $user->setPositionInTheCompagny($this->faker->jobTitle);
+
+            $this->createCustomers($user);
+
             $manager->persist($user);
             $u++;
 
         }
+
 
         $p = 0;
         while ($p <= self::PRODUCT_FAKE_NUMBER) {
 
             $phone = new ProductPhone();
             $phone->setName($AllPhones[array_rand($AllPhones,1)]);
-            $phone->setDescription($faker->paragraph($nbSentences = 3, $variableNbSentences = true));
+            $phone->setDescription($this->faker->paragraph($nbSentences = 3, $variableNbSentences = true));
             $phone->setPrice(random_int(200, 1500));
             $manager->persist($phone);
             $p++;
 
         }
         $manager->flush();
+    }
+
+    private function createCustomers(User $user)
+    {
+
+        $c = 0;
+        while ($c <= self::CUSTOMER_FAKE_NUMBER) {
+            $customer = new Customer();
+            $customer->setName($this->faker->firstName);
+            $customer->setSurname($this->faker->lastName);
+            $customer->setAddress($this->faker->address);
+            $customer->setMail($this->faker->email);
+            $customer->setPhone(125698534);
+            $customer->setMembershipNumber($this->faker->swiftBicNumber);
+
+            $user->addCustomer($customer);
+            $c++;
+        }
     }
 }
