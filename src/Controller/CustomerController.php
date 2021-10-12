@@ -10,30 +10,25 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\SerializerInterface;
-
+use JMS\Serializer\SerializerInterface;
 
 class CustomerController extends AbstractController
 {
 
+
+
     /**
      * @Route ("api/customer", name="customer",methods={"GET"})
      * @param CustomerRepository $customerRepository
-     * @param SerializerInterface $serializer
      * @return Response
      */
     public function index(CustomerRepository $customerRepository, SerializerInterface $serializer): Response
     {
-        $listCustomer = $customerRepository->findAll();
-
-        $jsonContent = $serializer->serialize(
-            $listCustomer,
-            'json',["groups"=>"customer:list"]
-           );
-        $response = new Response($jsonContent);
-        $response->headers->set('Content-Type', 'application/json');
-        $response->setMaxAge(3600);
-        return $response;
+        $listCustomer = $customerRepository->findCustomerFromUser($this->getUser(),1);
+        $jsonContent = $serializer->serialize($listCustomer, 'json');
+        $JsonResponse = new JsonResponse($jsonContent,"200",['Content-Type'=>'application/json'],true);
+        $JsonResponse->setMaxAge(3600);
+        return $JsonResponse;
     }
 
     /**

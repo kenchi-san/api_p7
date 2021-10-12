@@ -5,8 +5,24 @@ namespace App\Entity;
 use App\Repository\CustomerRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
-
+use Hateoas\Configuration\Annotation as Hateoas;
 /**
+ * @Hateoas\Relation(
+ *     "self",
+ *     href=@Hateoas\Route(
+ *          "customer",parameters = { "id" = "expr(object.getId())" })
+ * )
+ * @Hateoas\Relation(
+ *     "delete",
+ *     href=@Hateoas\Route(
+ *          "delete_customer",
+ *     parameters = { "id" = "expr(object.getId())" })
+ * )
+ * @Hateoas\Relation(
+ *     "add",
+ *     href=@Hateoas\Route(
+ *          "add_customer")
+ * )
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
  */
 class Customer
