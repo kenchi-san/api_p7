@@ -2,21 +2,21 @@
 
 namespace App\Repository;
 
-use App\Entity\Phone;
+use App\Entity\ProductPhone;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Phone|null find($id, $lockMode = null, $lockVersion = null)
- * @method Phone|null findOneBy(array $criteria, array $orderBy = null)
- * @method Phone[]    findAll()
- * @method Phone[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ProductPhone|null find($id, $lockMode = null, $lockVersion = null)
+ * @method ProductPhone|null findOneBy(array $criteria, array $orderBy = null)
+ * @method ProductPhone[]    findAll()
+ * @method ProductPhone[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PhoneRepository extends ServiceEntityRepository
+class ProductPhoneRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Phone::class);
+        parent::__construct($registry, ProductPhone::class);
     }
 
     // /**

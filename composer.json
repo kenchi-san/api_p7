@@ -7,14 +7,18 @@
         "php": ">=7.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "api-platform/core": "^2.6",
         "composer/package-versions-deprecated": "1.11.99.4",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.4",
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.9",
+        "fzaninotto/faker": "^1.9",
+        "jms/serializer": "^3.14",
+        "jms/serializer-bundle": "^3.10",
+        "lexik/jwt-authentication-bundle": "^2.13",
         "nelmio/cors-bundle": "^2.1",
         "phpdocumentor/reflection-docblock": "^5.2",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "5.3.*",
         "symfony/console": "5.3.*",
         "symfony/dotenv": "5.3.*",
@@ -30,9 +34,12 @@
         "symfony/serializer": "5.3.*",
         "symfony/twig-bundle": "5.3.*",
         "symfony/validator": "5.3.*",
-        "symfony/yaml": "5.3.*"
+        "symfony/yaml": "5.3.*",
+        "willdurand/hateoas": "^3.7",
+        "willdurand/hateoas-bundle": "^2.2"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "symfony/maker-bundle": "^1.33"
     },
     "config": {
@@ -58,6 +65,12 @@
         "symfony/polyfill-php72": "*"
     },
     "scripts": {
+        "reset": [
+            "symfony console d:d:d --force --if-exists",
+            "symfony console d:d:c",
+            "symfony console d:m:m -n",
+            "symfony console d:f:l -n"
+        ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"

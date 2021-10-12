@@ -2,35 +2,35 @@
 
 namespace App\Entity;
 
-use App\Repository\PhoneRepository;
+use App\Repository\ProductPhoneRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=PhoneRepository::class)
+ * @ORM\Entity(repositoryClass=ProductPhoneRepository::class)
  */
-class Phone
+class ProductPhone
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private ?string $name;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $price;
+    private ?float $price;
 
     public function getId(): ?int
     {
