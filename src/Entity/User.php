@@ -65,7 +65,7 @@ class User implements UserInterface
     private array $roles = [];
 
     /**
-     * @ORM\OneToMany(targetEntity=Customer::class, mappedBy="user")
+     * @ORM\OneToMany(targetEntity=Customer::class, mappedBy="user", cascade={"persist"})
 
      */
     private $customer;
