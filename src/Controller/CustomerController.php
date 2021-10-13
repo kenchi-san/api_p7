@@ -5,27 +5,28 @@ namespace App\Controller;
 use App\Entity\Customer;
 use App\Repository\CustomerRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use JMS\Serializer\DeserializationContext;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use JMS\Serializer\SerializerInterface;
-
+use JMS\Serializer\SerializationContext;
 class CustomerController extends AbstractController
 {
-
 
 
     /**
      * @Route ("api/customer", name="customer",methods={"GET"})
      * @param CustomerRepository $customerRepository
+     * @param SerializerInterface $serializer
      * @return Response
      */
     public function index(CustomerRepository $customerRepository, SerializerInterface $serializer): Response
     {
         $listCustomer = $customerRepository->findCustomerFromUser($this->getUser(),1);
-        $jsonContent = $serializer->serialize($listCustomer, 'json');
+        $jsonContent = $serializer->serialize($listCustomer, 'json',SerializationContext::create()->setGroups(array('groups'=>'customer:list')));
         $JsonResponse = new JsonResponse($jsonContent,"200",['Content-Type'=>'application/json'],true);
         $JsonResponse->setMaxAge(3600);
         return $JsonResponse;
@@ -40,17 +41,15 @@ class CustomerController extends AbstractController
      */
     public function detail(Request $request, CustomerRepository $customerRepository, SerializerInterface $serializer): Response
     {
-        return $this->json($customerRepository->find($request->get('id')),200,[],["groups"=>"customer:detail"]);
-
-//        $showCustomer = $customerRepository->find($request->get('id'));
-//        $jsonContent = $serializer->serialize(
-//            $showCustomer,
-//            'json',["groups"=>"customer:detail"]
-//        );
-//        $response = new JsonResponse($jsonContent,200,[],true);
-//        $response->setMaxAge(3600);
-//        $response->headers->set('Content-Type', 'application/json');
-//        return $response;
+        $showCustomer = $customerRepository->find($request->get('id'));
+        $jsonContent = $serializer->serialize(
+            $showCustomer,
+            'json',SerializationContext::create()->setGroups(array('groups'=>'customer:detail'))
+        );
+        $response = new JsonResponse($jsonContent,200,[],true);
+        $response->setMaxAge(3600);
+        $response->headers->set('Content-Type', 'application/json');
+        return $response;
     }
 
     /**
@@ -58,9 +57,10 @@ class CustomerController extends AbstractController
      */
     public function add(Request $request, SerializerInterface $serializer, EntityManagerInterface $manager): Response
     {
-        $customer = $serializer->deserialize($request->getContent(), Customer::class, 'json',["groups"=>"customer:add"]);
+        $context =  DeserializationContext::create()->setGroups(array('groups'=>'customer:add'));
+        $customer = $serializer->deserialize($request->getContent(), Customer::class, 'json',$context);
         $manager->persist($customer);
-        $test = $serializer->serialize($customer,"json",["groups"=>"customer:detail"]);
+        $test = $serializer->serialize($customer,"json",SerializationContext::create()->setGroups(array('groups'=>'customer:detail')));
         $manager->flush();
         return new JsonResponse($test, Response::HTTP_CREATED);
 
@@ -73,12 +73,12 @@ class CustomerController extends AbstractController
      * @param EntityManagerInterface $manager
      * @return Response
      */
-    public function delete(Request $request,SerializerInterface $serializer,CustomerRepository $customerRepository, EntityManagerInterface $manager): Response
+    public function delete(Request $request,CustomerRepository $customerRepository, EntityManagerInterface $manager): Response
     {
-        //TODO a faire
         $customer=$customerRepository->find($request->get('id'));
 
         $manager->remove($customer);
+        $manager->flush();
         return new Response("", Response::HTTP_FOUND);
 
 

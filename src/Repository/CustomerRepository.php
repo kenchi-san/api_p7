@@ -14,7 +14,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CustomerRepository extends ServiceEntityRepository
 {
-    const MAX_CUSTOMER_PER_PAGE = 1;
+    const MAX_CUSTOMER_PER_PAGE = 5;
 
     public function __construct(ManagerRegistry $registry)
     {
