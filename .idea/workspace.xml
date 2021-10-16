@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="updating jms and close #7">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="update( using jms serializer/delete customer) close #10 close #6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/lexik_jwt_authentication.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +202,10 @@
       <workItem from="1633959909768" duration="16854000" />
       <workItem from="1634051636210" duration="4214000" />
       <workItem from="1634056140987" duration="6251000" />
-      <workItem from="1634121251428" duration="8037000" />
+      <workItem from="1634121251428" duration="18264000" />
+      <workItem from="1634256834551" duration="261000" />
+      <workItem from="1634318735162" duration="1074000" />
+      <workItem from="1634376534283" duration="1049000" />
     </task>
     <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
       <created>1633017315570</created>
@@ -337,7 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634049051577</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="divert">
+      <created>1634140641792</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1634140641792</updated>
+    </task>
+    <task id="LOCAL-00020" summary="update( using jms serializer/delete customer) close #10 close #6">
+      <created>1634141243820</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1634141243820</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,6 +385,8 @@
     <MESSAGE value="feat(fixtures) close #5" />
     <MESSAGE value="feat(fixtures) close #8" />
     <MESSAGE value="updating jms and close #7" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating jms and close #7" />
+    <MESSAGE value="divert" />
+    <MESSAGE value="update( using jms serializer/delete customer) close #10 close #6" />
+    <option name="LAST_COMMIT_MESSAGE" value="update( using jms serializer/delete customer) close #10 close #6" />
   </component>
 </project>

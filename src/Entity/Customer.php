@@ -11,18 +11,32 @@ use JMS\Serializer\Annotation\Groups;
  * @Hateoas\Relation(
  *     "self",
  *     href=@Hateoas\Route(
- *          "customer",parameters = { "id" = "expr(object.getId())" })
+ *          "customer",
+ *
+ *     absolute = true)
+ *
+ * )
+ * @Hateoas\Relation(
+ *     "show",
+ *     href=@Hateoas\Route(
+ *          "detail_customer",
+ *     parameters = { "id" = "expr(object.getId())" },
+ *     absolute = true
+ *     )
  * )
  * @Hateoas\Relation(
  *     "delete",
  *     href=@Hateoas\Route(
  *          "delete_customer",
- *     parameters = { "id" = "expr(object.getId())" })
+ *     parameters = { "id" = "expr(object.getId())" },
+ *     absolute = true
+ *     )
  * )
  * @Hateoas\Relation(
  *     "add",
  *     href=@Hateoas\Route(
- *          "add_customer")
+ *          "add_customer",
+ *     absolute = true)
  * )
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
  */
@@ -74,9 +88,9 @@ class Customer
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="customer")
-     *
+     * @Groups({"customer:add"})
      */
-    private $user;
+    private ?User $user;
 
     public function getId(): ?int
     {
