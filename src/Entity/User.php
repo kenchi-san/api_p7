@@ -7,8 +7,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Serializer\Annotation\Groups;
-
+use Hateoas\Configuration\Annotation as Hateoas;
+use JMS\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -32,19 +32,19 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user","user:detail"})
+     * @Groups({"user","user:detail","customer:detail"})
      */
     private ?string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user:detail"})
+     * @Groups({"user:detail","customer:detail"})
      */
     private ?string $email;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user","user:detail"})
+     * @Groups({"user","user:detail","customer:detail"})
      */
     private ?string $surname;
 
@@ -55,7 +55,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user:detail"})
+     * @Groups({"user:detail","customer:detail"})
      */
     private ?string $position_in_the_compagny;
 
@@ -66,7 +66,7 @@ class User implements UserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Customer::class, mappedBy="user", cascade={"persist"})
-
+     * @Groups({"customer:detail"})
      */
     private $customer;
 

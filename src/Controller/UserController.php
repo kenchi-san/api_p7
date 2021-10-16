@@ -6,7 +6,8 @@ use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Serializer\SerializerInterface;
+use JMS\Serializer\SerializationContext;
+use JMS\Serializer\SerializerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
@@ -20,7 +21,7 @@ class UserController extends AbstractController
     public function index(UserRepository $userRepository, SerializerInterface $serializer): Response
     {
         $listUser = $userRepository->findAll();
-        $jsonContent =$serializer->serialize($listUser,'json',["groups"=>"user"]);
+        $jsonContent =$serializer->serialize($listUser,'json',SerializationContext::create()->setGroups(array('groups' => 'user')));
         $response = new Response($jsonContent);
 
         $response->headers->set('Content-Type', 'application/json');
@@ -37,9 +38,8 @@ class UserController extends AbstractController
      */
     public function detail(Request $request, UserRepository $phone, SerializerInterface $serializer): Response
     {
-        //TODO manque nom et prenom
         $showPhone = $phone->find($request->get('id'));
-        $jsonContent = $serializer->serialize($showPhone, 'json',["groups"=>"user:detail"]);
+        $jsonContent = $serializer->serialize($showPhone, 'json',SerializationContext::create()->setGroups(array('groups' => 'user:detail')));
         $response = new Response($jsonContent);
         $response->setMaxAge(3600);
         $response->headers->set('Content-Type', 'application/json');
