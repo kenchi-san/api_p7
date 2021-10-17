@@ -13,6 +13,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Hateoas\Representation\PaginatedRepresentation;
+use Hateoas\Representation\CollectionRepresentation;
 
 class CustomerController extends AbstractController
 {
@@ -27,7 +29,7 @@ class CustomerController extends AbstractController
     public function index(CustomerRepository $customerRepository, SerializerInterface $serializer): Response
     {
         $listCustomer = $customerRepository->findCustomerFromUser($this->getUser(), 1);
-        $jsonContent = $serializer->serialize($listCustomer, 'json', SerializationContext::create()->setGroups(['customer:detail','Default']));
+        $jsonContent = $serializer->serialize($listCustomer, 'json', SerializationContext::create()->setGroups(['customer:detail','Default','user']));
 
         $JsonResponse = new JsonResponse($jsonContent, "200", ['Content-Type' => 'application/json'], true);
         $JsonResponse->setMaxAge(3600);

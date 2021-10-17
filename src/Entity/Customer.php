@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\CustomerRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Hateoas\Configuration\Annotation as Hateoas;
+use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\Groups;
 
 /**
@@ -12,7 +13,6 @@ use JMS\Serializer\Annotation\Groups;
  *     "self",
  *     href=@Hateoas\Route(
  *          "customer",
- *
  *     absolute = true)
  *
  * )
@@ -37,6 +37,14 @@ use JMS\Serializer\Annotation\Groups;
  *     href=@Hateoas\Route(
  *          "add_customer",
  *     absolute = true)
+ * )
+ *
+ * @Hateoas\Relation(
+ *     "user",
+ *     href = "expr('/api/user/' ~ object.getUser().getId())",
+ *     embedded = "expr(object.getUser())",
+ *     exclusion = @Hateoas\Exclusion(excludeIf = "expr(object.getUser() === null)")
+ *
  * )
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
  */
@@ -89,6 +97,7 @@ class Customer
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="customer")
      * @Groups({"customer:add"})
+     * @Serializer\Exclude
      */
     private ?User $user;
 
