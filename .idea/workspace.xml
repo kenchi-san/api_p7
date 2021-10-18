@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="no change">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="init embed list customer #11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
@@ -207,7 +206,7 @@
       <workItem from="1634318735162" duration="1074000" />
       <workItem from="1634376534283" duration="2248000" />
       <workItem from="1634379848318" duration="2335000" />
-      <workItem from="1634510008188" duration="753000" />
+      <workItem from="1634510008188" duration="16763000" />
     </task>
     <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
       <created>1633017315570</created>
@@ -363,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634378402583</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="init embed list customer #11">
+      <created>1634511841173</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1634511841173</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,6 +411,7 @@
     <MESSAGE value="update( using jms serializer/delete customer) close #10 close #6" />
     <MESSAGE value="update close #10 close #6" />
     <MESSAGE value="no change" />
-    <option name="LAST_COMMIT_MESSAGE" value="no change" />
+    <MESSAGE value="init embed list customer #11" />
+    <option name="LAST_COMMIT_MESSAGE" value="init embed list customer #11" />
   </component>
 </project>

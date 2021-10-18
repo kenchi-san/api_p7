@@ -13,8 +13,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Hateoas\Representation\PaginatedRepresentation;
-use Hateoas\Representation\CollectionRepresentation;
 
 class CustomerController extends AbstractController
 {
@@ -29,7 +27,7 @@ class CustomerController extends AbstractController
     public function index(CustomerRepository $customerRepository, SerializerInterface $serializer): Response
     {
         $listCustomer = $customerRepository->findCustomerFromUser($this->getUser(), 1);
-        $jsonContent = $serializer->serialize($listCustomer, 'json', SerializationContext::create()->setGroups(['customer:detail','Default','user']));
+        $jsonContent = $serializer->serialize($listCustomer, 'json', SerializationContext::create()->setGroups(['customer:list', 'Default', 'user']));
 
         $JsonResponse = new JsonResponse($jsonContent, "200", ['Content-Type' => 'application/json'], true);
         $JsonResponse->setMaxAge(3600);
@@ -42,10 +40,12 @@ class CustomerController extends AbstractController
      * @param CustomerRepository $customerRepository
      * @param SerializerInterface $serializer
      * @return Response
+     *
      */
     public function detail(Request $request, CustomerRepository $customerRepository, SerializerInterface $serializer): Response
     {
         $showCustomer = $customerRepository->find($request->get('id'));
+        $this->denyAccessUnlessGranted('CUSTOMER_VIEW', $showCustomer);
         $jsonContent = $serializer->serialize(
             $showCustomer,
             'json', SerializationContext::create()->setGroups(array('groups' => 'customer:detail'))
@@ -58,10 +58,15 @@ class CustomerController extends AbstractController
 
     /**
      * @Route("api/add/customer",name="add_customer",methods={"POST"})
+     *
      */
     public function add(Request $request, SerializerInterface $serializer, EntityManagerInterface $manager): Response
     {
-        $customer = $serializer->deserialize($request->getContent(), Customer::class, 'json', DeserializationContext::create()->setGroups(array('groups' => 'customer:add')));
+        if (!$this->getUser()) {
+            throw $this->createAccessDeniedException();
+        }
+        $customer = $serializer->deserialize($request->getContent(), Customer::class, 'json');
+        $customer->setUser($this->getUser());
         $manager->persist($customer);
         $test = $serializer->serialize($customer, "json", SerializationContext::create()->setGroups(array('groups' => 'customer:detail')));
         $manager->flush();
@@ -79,6 +84,7 @@ class CustomerController extends AbstractController
     public function delete(Request $request, CustomerRepository $customerRepository, EntityManagerInterface $manager): Response
     {
         $customer = $customerRepository->find($request->get('id'));
+        $this->denyAccessUnlessGranted('CUSTOMER_DELETE', $customer);
         $manager->remove($customer);
         $manager->flush();
         return new Response("", Response::HTTP_FOUND);
