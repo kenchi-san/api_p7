@@ -19,7 +19,7 @@ class User implements UserInterface
 
     public function __construct()
     {
-        $this->roles = ["ROLE_USER"];
+        $this->roles = ["IS_AUTHENTICATED_FULLY"];
         $this->customer = new ArrayCollection();
     }
 
@@ -27,6 +27,7 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"customer:add"})
      */
     private ?int $id;
 

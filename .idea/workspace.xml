@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="init embed list customer #11">
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="feat(access ) close #12">
+      <change afterPath="$PROJECT_DIR$/src/Security/Voter/CustomerVoter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +206,7 @@
       <workItem from="1634318735162" duration="1074000" />
       <workItem from="1634376534283" duration="2248000" />
       <workItem from="1634379848318" duration="2335000" />
-      <workItem from="1634510008188" duration="16763000" />
+      <workItem from="1634510008188" duration="17172000" />
     </task>
     <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
       <created>1633017315570</created>
@@ -369,7 +369,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634511841173</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fix close #9">
+      <created>1634599340974</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1634599340974</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat(access ) close #12">
+      <created>1634599514222</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1634599514222</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +402,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init projet" />
     <MESSAGE value="feat(request listPhone,detailPhone,entity,repo) close #1" />
     <MESSAGE value="feat(setup config)" />
     <MESSAGE value="feat(request listCustomer,detailCustomer,entity,repo) close #2" />
@@ -412,6 +425,8 @@
     <MESSAGE value="update close #10 close #6" />
     <MESSAGE value="no change" />
     <MESSAGE value="init embed list customer #11" />
-    <option name="LAST_COMMIT_MESSAGE" value="init embed list customer #11" />
+    <MESSAGE value="fix close #9" />
+    <MESSAGE value="feat(access ) close #12" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(access ) close #12" />
   </component>
 </project>
