@@ -54,7 +54,6 @@ class Customer
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"customer:list"})
      */
     private ?int $id;
 
@@ -96,7 +95,6 @@ class Customer
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="customer")
-     * @Groups({"customer:add"})
      * @Serializer\Exclude
      */
     private ?User $user;
