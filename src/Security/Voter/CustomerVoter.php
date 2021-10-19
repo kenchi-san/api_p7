@@ -27,13 +27,12 @@ class CustomerVoter extends Voter
         if (!$user instanceof UserInterface) {
             return false;
         }
-        $customer = $subject;
         // ... (check conditions and return true to grant permission) ...
         switch ($attribute) {
             case self::CUSTOMER_VIEW:
             case self::CUSTOMER_EDIT:
             case self::CUSTOMER_DELETE:
-            return $this->owner($customer, $user);
+            return $this->owner($subject, $user);
         }
 
         return false;
@@ -41,10 +40,10 @@ class CustomerVoter extends Voter
 
     /**
      * @param $customer
-     * @param User|null $user
+     * @param User $user
      * @return bool
      */
-    private function owner($customer, ?User $user): bool
+    private function owner($customer, User $user): bool
     {
 
         if ($user->getId() == $customer->getUser()->getId()) {

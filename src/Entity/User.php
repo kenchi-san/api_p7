@@ -68,7 +68,6 @@ class User implements UserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Customer::class, mappedBy="user", cascade={"persist"})
-     * @Groups({"customer:detail"})
      */
     private $customer;
 

@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="feat(access ) close #12">
-      <change afterPath="$PROJECT_DIR$/src/Security/Voter/CustomerVoter.php" afterDir="false" />
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="feat(extra bundle )">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/Voter/CustomerVoter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/Voter/CustomerVoter.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +137,7 @@
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
       <path value="$PROJECT_DIR$/vendor/willdurand/hateoas-bundle" />
       <path value="$PROJECT_DIR$/vendor/jms/serializer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1yQKBerCfbF12PIZUVG5NyooWeV" />
@@ -206,7 +208,8 @@
       <workItem from="1634318735162" duration="1074000" />
       <workItem from="1634376534283" duration="2248000" />
       <workItem from="1634379848318" duration="2335000" />
-      <workItem from="1634510008188" duration="17172000" />
+      <workItem from="1634510008188" duration="19636000" />
+      <workItem from="1634646754079" duration="5903000" />
     </task>
     <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
       <created>1633017315570</created>
@@ -383,7 +386,28 @@
       <option name="project" value="LOCAL" />
       <updated>1634599514222</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="(role changed )">
+      <created>1634599578446</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1634599578446</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat(link, pagination )">
+      <created>1634658971971</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1634658971971</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat(extra bundle )">
+      <created>1634659008481</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1634659008481</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,9 +426,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(request listPhone,detailPhone,entity,repo) close #1" />
-    <MESSAGE value="feat(setup config)" />
-    <MESSAGE value="feat(request listCustomer,detailCustomer,entity,repo) close #2" />
     <MESSAGE value="feat(request listUser,detailUser,entity,repo) close #4" />
     <MESSAGE value="fix(forgot migration)" />
     <MESSAGE value="fix(update Customer) #2" />
@@ -427,6 +448,9 @@
     <MESSAGE value="init embed list customer #11" />
     <MESSAGE value="fix close #9" />
     <MESSAGE value="feat(access ) close #12" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(access ) close #12" />
+    <MESSAGE value="(role changed )" />
+    <MESSAGE value="feat(link, pagination )" />
+    <MESSAGE value="feat(extra bundle )" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(extra bundle )" />
   </component>
 </project>

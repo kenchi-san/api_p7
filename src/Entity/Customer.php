@@ -43,7 +43,7 @@ use JMS\Serializer\Annotation\Groups;
  *     "user",
  *     href = "expr('/api/user/' ~ object.getUser().getId())",
  *     embedded = "expr(object.getUser())",
- *     exclusion = @Hateoas\Exclusion(excludeIf = "expr(object.getUser() === null)")
+ *     exclusion = @Hateoas\Exclusion(excludeIf = "expr(object.getUser() === null)", groups={"customer:list","customer:detail"})
  *
  * )
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
@@ -54,6 +54,7 @@ class Customer
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Serializer\Exclude
      */
     private ?int $id;
 
