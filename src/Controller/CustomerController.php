@@ -51,10 +51,10 @@ class CustomerController extends AbstractController
 
     /**
      * @Route("api/customer/{id}",name="detail_customer",methods={"GET"})
-     * @param Customer $customer
      * @param SerializerInterface $serializer
      * @return Response
      * @IsGranted("CUSTOMER_VIEW", subject="customer")
+     *
      */
     public function detail(Customer $customer, SerializerInterface $serializer): Response
     {
