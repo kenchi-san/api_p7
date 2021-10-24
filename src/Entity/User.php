@@ -6,9 +6,10 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\Annotation\Groups;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Hateoas\Configuration\Annotation as Hateoas;
-use JMS\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -27,19 +28,19 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"customer:add"})
+     * @Serializer\Exclude()
      */
     private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user","user:detail","customer:detail"})
+     * @Groups({"user","user:detail","customer:detail","customer:list"})
      */
     private ?string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user:detail","customer:detail"})
+     * @Groups({"user:detail"})
      */
     private ?string $email;
 
@@ -63,11 +64,13 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="json")
+     * @Serializer\Exclude()
      */
     private array $roles = [];
 
     /**
      * @ORM\OneToMany(targetEntity=Customer::class, mappedBy="user", cascade={"persist"})
+     * @Serializer\Exclude()
      */
     private $customer;
 
