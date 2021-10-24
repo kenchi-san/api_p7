@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="feat(groups)&#10; )">
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="fix(list phone) close #13">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PhoneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PhoneController.php" afterDir="false" />
@@ -215,7 +215,7 @@
       <workItem from="1634646754079" duration="6398000" />
       <workItem from="1634680998680" duration="8611000" />
       <workItem from="1634734329090" duration="22076000" />
-      <workItem from="1634834390993" duration="5628000" />
+      <workItem from="1634834390993" duration="5927000" />
     </task>
     <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
       <created>1633017315570</created>
@@ -420,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634660850369</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix(list phone) close #13">
+      <created>1635114063125</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1635114063125</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +446,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix(forgot migration)" />
     <MESSAGE value="fix(update Customer) #2" />
     <MESSAGE value="feat(fixtures) #5" />
     <MESSAGE value="feat( updating fixtures) #5" />
@@ -464,6 +470,7 @@
     <MESSAGE value="feat(link, pagination )" />
     <MESSAGE value="feat(extra bundle )" />
     <MESSAGE value="feat(groups)&#10; )" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(groups)&#10; )" />
+    <MESSAGE value="fix(list phone) close #13" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(list phone) close #13" />
   </component>
 </project>

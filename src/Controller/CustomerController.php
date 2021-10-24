@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Customer;
 use App\Repository\CustomerRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Hateoas\Representation\CollectionRepresentation;
+use Hateoas\Representation\PaginatedRepresentation;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -24,11 +26,24 @@ class CustomerController extends AbstractController
      * @param SerializerInterface $serializer
      * @return Response
      */
-    public function index(CustomerRepository $customerRepository, SerializerInterface $serializer): Response
+    public function index(Request $request,CustomerRepository $customerRepository, SerializerInterface $serializer): Response
     {
-        $listCustomer = $customerRepository->findCustomerFromUser($this->getUser(), 1);
-        $jsonContent = $serializer->serialize($listCustomer, 'json', SerializationContext::create()->setGroups(['customer:list', 'user']));
-
+        $page = $request->get('page', 1);
+        $limit  = $request->get('limit', 10);
+        $listCustomer = $customerRepository->findCustomerFromUser($this->getUser(), $page,$limit);
+        $paginatedCollection = new PaginatedRepresentation(
+            new CollectionRepresentation($listCustomer),
+            "customer", // route
+            [], // route parameters
+            $page,       // page number
+            $limit,      // limit
+            ceil($listCustomer->count() / $limit),       // total pages
+            'page',  // page route parameter name, optional, defaults to 'page'
+            'limit', // limit route parameter name, optional, defaults to 'limit'
+            false,   // generate relative URIs, optional, defaults to `false`
+            $listCustomer->count()       // total collection size, optional, defaults to `null`
+        );
+        $jsonContent = $serializer->serialize($paginatedCollection, 'json', SerializationContext::create()->setGroups(['customer:list','Default']));
         $JsonResponse = new JsonResponse($jsonContent, "200", ['Content-Type' => 'application/json'], true);
         $JsonResponse->setMaxAge(3600);
         return $JsonResponse;
@@ -36,7 +51,6 @@ class CustomerController extends AbstractController
 
     /**
      * @Route("api/customer/{id}",name="detail_customer",methods={"GET"})
-     * @param Request $request
      * @param SerializerInterface $serializer
      * @return Response
      * @IsGranted("CUSTOMER_VIEW", subject="customer")
@@ -46,7 +60,7 @@ class CustomerController extends AbstractController
     {
         $jsonContent = $serializer->serialize(
             $customer,
-            'json', SerializationContext::create()->setGroups(array('groups' => 'customer:detail'))
+            'json', SerializationContext::create()->setGroups(['groups' => 'customer:detail'])
         );
         $response = new JsonResponse($jsonContent, 200, [], true);
         $response->setMaxAge(3600);
@@ -66,7 +80,7 @@ class CustomerController extends AbstractController
         $customer = $serializer->deserialize($request->getContent(), Customer::class, 'json');
         $customer->setUser($this->getUser());
         $manager->persist($customer);
-        $test = $serializer->serialize($customer, "json", SerializationContext::create()->setGroups(array('groups' => 'customer:detail')));
+        $test = $serializer->serialize($customer, "json", SerializationContext::create()->setGroups(['groups' => 'customer:detail']));
         $manager->flush();
         return new JsonResponse($test, Response::HTTP_CREATED);
 

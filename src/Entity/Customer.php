@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Entity;
 
 use App\Repository\CustomerRepository;
@@ -12,8 +11,8 @@ use JMS\Serializer\Annotation\Groups;
  * @Hateoas\Relation(
  *     "self",
  *     href=@Hateoas\Route(
- *          "customer",
- *     absolute = true)
+ *          "customer"
+ *     )
  *
  * )
  * @Hateoas\Relation(
@@ -21,7 +20,7 @@ use JMS\Serializer\Annotation\Groups;
  *     href=@Hateoas\Route(
  *          "detail_customer",
  *     parameters = { "id" = "expr(object.getId())" },
- *     absolute = true
+ *
  *     )
  * )
  * @Hateoas\Relation(
@@ -29,21 +28,21 @@ use JMS\Serializer\Annotation\Groups;
  *     href=@Hateoas\Route(
  *          "delete_customer",
  *     parameters = { "id" = "expr(object.getId())" },
- *     absolute = true
+ *
  *     )
  * )
  * @Hateoas\Relation(
  *     "add",
  *     href=@Hateoas\Route(
  *          "add_customer",
- *     absolute = true)
+ *     )
  * )
  *
  * @Hateoas\Relation(
  *     "user",
  *     href = "expr('/api/user/' ~ object.getUser().getId())",
  *     embedded = "expr(object.getUser())",
- *     exclusion = @Hateoas\Exclusion(excludeIf = "expr(object.getUser() === null)", groups={"customer:list","customer:detail"})
+ *     exclusion = @Hateoas\Exclusion(excludeIf = "expr(object.getUser() === null)",groups={"customer:detail","customer:list"} )
  *
  * )
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
