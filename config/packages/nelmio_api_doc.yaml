@@ -1,5 +1,9 @@
 nelmio_api_doc:
     documentation:
+        servers:
+            - url: /
+              description:
+
         info:
             title: My App
             description: This is an awesome app!
