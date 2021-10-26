@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="fix(list phone) close #13">
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="updating bundles">
+      <change beforePath="$PROJECT_DIR$/.idea/api_p7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api_p7.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/nelmio_api_doc.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/nelmio_api_doc.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PhoneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PhoneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPhone.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPhone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -141,6 +145,10 @@
       <path value="$PROJECT_DIR$/vendor/willdurand/hateoas-bundle" />
       <path value="$PROJECT_DIR$/vendor/jms/serializer-bundle" />
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/api-doc-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twig/extra-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1yQKBerCfbF12PIZUVG5NyooWeV" />
@@ -216,6 +224,8 @@
       <workItem from="1634680998680" duration="8611000" />
       <workItem from="1634734329090" duration="22076000" />
       <workItem from="1634834390993" duration="5927000" />
+      <workItem from="1635165486280" duration="565000" />
+      <workItem from="1635251915976" duration="4226000" />
     </task>
     <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
       <created>1633017315570</created>
@@ -427,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635114063125</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="setting NelmioApiDocBundle close #14">
+      <created>1635116608195</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1635116608195</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,8 +463,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix(update Customer) #2" />
-    <MESSAGE value="feat(fixtures) #5" />
     <MESSAGE value="feat( updating fixtures) #5" />
     <MESSAGE value="fix( Customer.php) #2" />
     <MESSAGE value="fix( update PhoneController.php) #1" />
@@ -471,6 +486,8 @@
     <MESSAGE value="feat(extra bundle )" />
     <MESSAGE value="feat(groups)&#10; )" />
     <MESSAGE value="fix(list phone) close #13" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(list phone) close #13" />
+    <MESSAGE value="setting NelmioApiDocBundle close #14" />
+    <MESSAGE value="updating bundles" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating bundles" />
   </component>
 </project>

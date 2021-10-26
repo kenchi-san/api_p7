@@ -9,19 +9,46 @@ use Hateoas\Representation\CollectionRepresentation;
 use Hateoas\Representation\PaginatedRepresentation;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerInterface;
+use Nelmio\ApiDocBundle\Annotation\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Nelmio\ApiDocBundle\Annotation\Model;
+use OpenApi\Annotations as OA;
 class CustomerController extends AbstractController
 {
 
 
     /**
      * @Route ("api/customer", name="customer",methods={"GET"})
+     *
+     * @OA\Response(
+     *     response=200,
+     *     @Model(type=Customer::class),
+     *     description="Returns the list of customers",
+     *     @OA\JsonContent(
+     *        type="array",
+     *        @OA\Items(ref=@Model(type=Customer::class, groups={"customer:list"}))
+     *     )
+     * )
+     * @OA\Parameter(
+     *     name="page",
+     *     in="query",
+     *     description="page number",
+     *     @OA\Schema(type="integer")
+     * )
+     * @OA\Parameter(
+     *     name="limit",
+     *     in="query",
+     *     description="limit in page",
+     *     @OA\Schema(type="integer")
+     * )
+     * @Security(name="Bearer")
+     *
+     * @param Request $request
      * @param CustomerRepository $customerRepository
      * @param SerializerInterface $serializer
      * @return Response
@@ -51,10 +78,10 @@ class CustomerController extends AbstractController
 
     /**
      * @Route("api/customer/{id}",name="detail_customer",methods={"GET"})
+     * @param Customer $customer
      * @param SerializerInterface $serializer
      * @return Response
      * @IsGranted("CUSTOMER_VIEW", subject="customer")
-     *
      */
     public function detail(Customer $customer, SerializerInterface $serializer): Response
     {
