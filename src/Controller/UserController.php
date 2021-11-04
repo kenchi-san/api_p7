@@ -19,6 +19,7 @@ class UserController extends AbstractController
 
     /**
      * @Route("api/user", name="user",methods={"GET"})
+     * @OA\Tag(name="user")
      * @param UserRepository $userRepository
      * @param SerializerInterface $serializer
      * @return Response
@@ -36,6 +37,7 @@ class UserController extends AbstractController
 
     /**
      * @Route ("/api/user/{id}",name="detail_user",methods={"GET"})
+     * @OA\Tag(name="user")
      * @param Request $request
      * @param UserRepository $phone
      * @param SerializerInterface $serializer

@@ -6,9 +6,11 @@ use App\Entity\ProductPhone;
 use App\Repository\ProductPhoneRepository;
 use Hateoas\Representation\CollectionRepresentation;
 use Hateoas\Representation\PaginatedRepresentation;
-use JMS\Serializer\Annotation\Groups;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerInterface;
+use Nelmio\ApiDocBundle\Annotation\Model;
+use Nelmio\ApiDocBundle\Annotation\Security;
+use OpenApi\Annotations as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,6 +22,29 @@ class PhoneController extends AbstractController
 {
     /**
      * @Route("api/phone", name="phone",methods={"GET"})
+     * @OA\Response(
+     *     response=200,
+     *     @Model(type=ProductPhone::class),
+     *     description="Returns the list of phones",
+     *     @OA\JsonContent(
+     *        ref=@Model(type=ProductPhone::class, groups={"phone:list"})
+     *     )
+     * )
+     *
+     * @OA\Parameter(
+     *     name="page",
+     *     in="query",
+     *     description="page number",
+     *     @OA\Schema(type="integer")
+     * )
+     * @OA\Parameter(
+     *     name="limit",
+     *     in="query",
+     *     description="limit in page",
+     *     @OA\Schema(type="integer")
+     * )
+     * @OA\Tag(name="products")
+     * @Security(name="Bearer")
      * @param Request $request
      * @param ProductPhoneRepository $phoneRepository
      * @param SerializerInterface $serializer
@@ -57,6 +82,7 @@ class PhoneController extends AbstractController
 
     /**
      * @Route ("/api/phone/{id}",name="detail_phone",methods={"GET"})
+     * @OA\Tag(name="products")
      * @param ProductPhone $phone
      * @param SerializerInterface $serializer
      * @return Response

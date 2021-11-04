@@ -49,6 +49,13 @@ use JMS\Serializer\Annotation\Groups;
  */
 class Customer
 {
+
+    public function __construct($membership_number)
+    {
+
+        $this->membership_number = $membership_number;
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -60,6 +67,7 @@ class Customer
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"customer:list","customer:detail","customer:add"})
+     *
      */
     private ?string $name;
 
