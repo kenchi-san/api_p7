@@ -1,27 +1,45 @@
 @startuml
 'https://plantuml.com/class-diagram
+title Diagram Class
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+class User{
+name:string
+mail:string
+surname:string
+role:Json
+password:string
+position_in_the_compagny:string
+index()
+detail()
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class Customer{
+name:string
+surname:string
+mail:string
+address:string
+phone:integer
+membership_number:string
+index()
+detail()
+add()
+delete()
+
 }
+
+class ProductPhone{
+name:string
+description:string
+price:float
+index()
+detail()
+}
+
+User "1" -- "1..*" Customer : contain
+
+
+
+
 
 @enduml
