@@ -1,65 +1,103 @@
 <?php
-
 namespace App\Entity;
 
 use App\Repository\CustomerRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Serializer\Annotation\Groups;
 use Hateoas\Configuration\Annotation as Hateoas;
+use JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @Hateoas\Relation(
  *     "self",
  *     href=@Hateoas\Route(
- *          "customer",parameters = { "id" = "expr(object.getId())" })
+ *          "customer"
+ *     )
+ *
+ * )
+ * @Hateoas\Relation(
+ *     "show",
+ *     href=@Hateoas\Route(
+ *          "detail_customer",
+ *     parameters = { "id" = "expr(object.getId())" },
+ *
+ *     )
  * )
  * @Hateoas\Relation(
  *     "delete",
  *     href=@Hateoas\Route(
  *          "delete_customer",
- *     parameters = { "id" = "expr(object.getId())" })
+ *     parameters = { "id" = "expr(object.getId())" },
+ *
+ *     )
  * )
  * @Hateoas\Relation(
  *     "add",
  *     href=@Hateoas\Route(
- *          "add_customer")
+ *          "add_customer",
+ *     )
+ * )
+ *
+ * @Hateoas\Relation(
+ *     "user",
+ *     href = "expr('/api/user/' ~ object.getUser().getId())",
+ *     embedded = "expr(object.getUser())",
+ *     exclusion = @Hateoas\Exclusion(excludeIf = "expr(object.getUser() === null)",groups={"customer:detail","customer:list"} )
+ *
  * )
  * @ORM\Entity(repositoryClass=CustomerRepository::class)
  */
 class Customer
 {
+
+    public function __construct($membership_number)
+    {
+
+        $this->membership_number = $membership_number;
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Serializer\Exclude
      */
     private ?int $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false)
+     * @Assert\NotBlank
      * @Groups({"customer:list","customer:detail","customer:add"})
+     *
      */
     private ?string $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false)
+     * @Assert\NotBlank
      * @Groups({"customer:list","customer:detail","customer:add"})
      */
     private ?string $surname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false)
+     * @Assert\NotBlank
+     * @Assert\Email(message = "The email '{{ value }}' is not a valid email.")
      * @Groups({"customer:detail","customer:add"})
      */
     private ?string $mail;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=false)
+     * @Assert\NotBlank
      * @Groups({"customer:detail","customer:add"})
      */
     private ?string $address;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank
      * @Groups({"customer:detail","customer:add"})
      */
     private ?int $phone;
@@ -72,8 +110,9 @@ class Customer
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="customer")
+     * @Serializer\Exclude
      */
-    private $user;
+    private ?User $user;
 
     public function getId(): ?int
     {

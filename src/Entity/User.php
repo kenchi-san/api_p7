@@ -6,9 +6,11 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\Annotation\Groups;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Serializer\Annotation\Groups;
-
+use Hateoas\Configuration\Annotation as Hateoas;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -19,7 +21,7 @@ class User implements UserInterface
 
     public function __construct()
     {
-        $this->roles = ["ROLE_USER"];
+        $this->roles = ["IS_AUTHENTICATED_FULLY"];
         $this->customer = new ArrayCollection();
     }
 
@@ -27,46 +29,58 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Serializer\Exclude()
      */
     private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user","user:detail"})
+     * @Assert\NotBlank
+     * @Assert\Length(min=4)
+     * @Groups({"user","user:detail","customer:detail","customer:list"})
      */
     private ?string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Email()
      * @Groups({"user:detail"})
      */
     private ?string $email;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user","user:detail"})
+     * @Assert\NotBlank
+     * @Assert\Length(min=4)
+     * @Groups({"user","user:detail","customer:detail"})
      */
     private ?string $surname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Groups({"customer:embed"})
      */
     private ?string $password;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user:detail"})
+     * @Assert\NotBlank
+     * @Groups({"user:detail","customer:detail"})
      */
     private ?string $position_in_the_compagny;
 
     /**
      * @ORM\Column(type="json")
+     * @Assert\NotBlank
+     * @Serializer\Exclude()
      */
     private array $roles = [];
 
     /**
      * @ORM\OneToMany(targetEntity=Customer::class, mappedBy="user", cascade={"persist"})
-
+     * @Serializer\Exclude()
      */
     private $customer;
 

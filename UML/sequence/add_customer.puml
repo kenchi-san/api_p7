@@ -1,0 +1,23 @@
+@startuml
+
+title Sequence : Add Customer
+
+actor User as U
+participant Controller as C
+participant Doctrine as D
+participant SGBD as BDD
+ref over U,C,D,BDD : Connection
+
+U->C:  new customer
+C->C: check validity
+alt valid data
+    C->D: flush
+    activate D
+    D->BDD: insertion in the bdd
+    deactivate D
+    C-->U: redirect response Json (302)
+else invalid
+  C-->U: Json message error (400)
+end
+
+@enduml

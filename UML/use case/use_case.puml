@@ -6,7 +6,7 @@
 (Liste User) as (LU)
 (Detail User) as (DU)
 (Add New User) as (ANU)
-(Delete Some Users) as (DSU)
+(Delete User) as (DSU)
 (Consult All Products) as (CAP)
 (Consult Details Products) as (CDP)
 

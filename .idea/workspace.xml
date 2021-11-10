@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="updating jms and close #7">
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="diagram class , sequence, bdd #16">
+      <change afterPath="$PROJECT_DIR$/src/EventSubscriber/ExceptionSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/class/class.puml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/class/class.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/sequence/add_customer.puml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/sequence/add_customer.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/sequence/conection.puml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/sequence/conection.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/use case/use_case.puml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/use case/use_case.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPhone.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPhone.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,18 +26,23 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <interpreter composer="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="UML Use Case" />
         <option value="UML Class" />
+        <option value="UML Sequence" />
+        <option value="UML MindMap" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -38,7 +52,7 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
@@ -136,6 +150,13 @@
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
       <path value="$PROJECT_DIR$/vendor/willdurand/hateoas-bundle" />
       <path value="$PROJECT_DIR$/vendor/jms/serializer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/api-doc-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/form" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu" />
     </include_path>
   </component>
   <component name="ProjectId" id="1yQKBerCfbF12PIZUVG5NyooWeV" />
@@ -146,26 +167,29 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="DefaultPlantUmlFileTemplate" value="UML Class" />
+    <property name="DefaultPlantUmlFileTemplate" value="UML MindMap" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/UML/sequence" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\api_p7\UML\sequence" />
+      <recent name="D:\wamp64\www\api_p7\templates" />
       <recent name="D:\wamp64\www\api_p7" />
       <recent name="D:\wamp64\www\API-symfony" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\api_p7" />
       <recent name="D:\wamp64\www\api_p7\src\Controller" />
       <recent name="D:\wamp64\www\API-symfony\UML\use case" />
     </key>
@@ -198,6 +222,29 @@
       <workItem from="1633429284002" duration="9162000" />
       <workItem from="1633450972987" duration="2817000" />
       <workItem from="1633959909768" duration="16854000" />
+      <workItem from="1634051636210" duration="4214000" />
+      <workItem from="1634056140987" duration="6251000" />
+      <workItem from="1634121251428" duration="18264000" />
+      <workItem from="1634256834551" duration="261000" />
+      <workItem from="1634318735162" duration="1074000" />
+      <workItem from="1634376534283" duration="2248000" />
+      <workItem from="1634379848318" duration="2335000" />
+      <workItem from="1634510008188" duration="19636000" />
+      <workItem from="1634646754079" duration="6398000" />
+      <workItem from="1634680998680" duration="8611000" />
+      <workItem from="1634734329090" duration="22076000" />
+      <workItem from="1634834390993" duration="5927000" />
+      <workItem from="1635165486280" duration="565000" />
+      <workItem from="1635251915976" duration="17088000" />
+      <workItem from="1635340044404" duration="30929000" />
+      <workItem from="1635499676785" duration="12488000" />
+      <workItem from="1635626062043" duration="5075000" />
+      <workItem from="1636039686786" duration="10334000" />
+      <workItem from="1636121605985" duration="3198000" />
+      <workItem from="1636385320007" duration="1191000" />
+      <workItem from="1636464914876" duration="8119000" />
+      <workItem from="1636498872738" duration="4180000" />
+      <workItem from="1636557270771" duration="968000" />
     </task>
     <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
       <created>1633017315570</created>
@@ -325,7 +372,140 @@
       <option name="project" value="LOCAL" />
       <updated>1634049051577</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="divert">
+      <created>1634140641792</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1634140641792</updated>
+    </task>
+    <task id="LOCAL-00020" summary="update( using jms serializer/delete customer) close #10 close #6">
+      <created>1634141243820</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1634141243820</updated>
+    </task>
+    <task id="LOCAL-00021" summary="update close #10 close #6">
+      <created>1634378361288</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1634378361288</updated>
+    </task>
+    <task id="LOCAL-00022" summary="no change">
+      <created>1634378402583</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1634378402583</updated>
+    </task>
+    <task id="LOCAL-00023" summary="init embed list customer #11">
+      <created>1634511841173</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1634511841173</updated>
+    </task>
+    <task id="LOCAL-00024" summary="fix close #9">
+      <created>1634599340974</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1634599340974</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat(access ) close #12">
+      <created>1634599514222</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1634599514222</updated>
+    </task>
+    <task id="LOCAL-00026" summary="(role changed )">
+      <created>1634599578446</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1634599578446</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat(link, pagination )">
+      <created>1634658971971</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1634658971971</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat(extra bundle )">
+      <created>1634659008481</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1634659008481</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat(groups)&#10; )">
+      <created>1634660850369</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1634660850369</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fix(list phone) close #13">
+      <created>1635114063125</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1635114063125</updated>
+    </task>
+    <task id="LOCAL-00031" summary="setting NelmioApiDocBundle close #14">
+      <created>1635116608195</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1635116608195</updated>
+    </task>
+    <task id="LOCAL-00032" summary="updating bundles">
+      <created>1635269556191</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1635269556191</updated>
+    </task>
+    <task id="LOCAL-00033" summary="starting doc to customer #15">
+      <created>1635269630349</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1635269630349</updated>
+    </task>
+    <task id="LOCAL-00034" summary="updating doc #15">
+      <created>1635292017990</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1635292017990</updated>
+    </task>
+    <task id="LOCAL-00035" summary="add tag doc #15">
+      <created>1635375804008</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1635375804009</updated>
+    </task>
+    <task id="LOCAL-00036" summary="update doc #15">
+      <created>1636070042199</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1636070042199</updated>
+    </task>
+    <task id="LOCAL-00037" summary="diagram class , sequence, bdd #16">
+      <created>1636072766656</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1636072766656</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,25 +524,31 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init projet" />
-    <MESSAGE value="feat(request listPhone,detailPhone,entity,repo) close #1" />
-    <MESSAGE value="feat(setup config)" />
-    <MESSAGE value="feat(request listCustomer,detailCustomer,entity,repo) close #2" />
-    <MESSAGE value="feat(request listUser,detailUser,entity,repo) close #4" />
-    <MESSAGE value="fix(forgot migration)" />
-    <MESSAGE value="fix(update Customer) #2" />
-    <MESSAGE value="feat(fixtures) #5" />
-    <MESSAGE value="feat( updating fixtures) #5" />
-    <MESSAGE value="fix( Customer.php) #2" />
-    <MESSAGE value="fix( update PhoneController.php) #1" />
-    <MESSAGE value="fix( update User) #4" />
-    <MESSAGE value="feat( jwt) #6" />
     <MESSAGE value="delete template" />
     <MESSAGE value="update User.php with UserInterface close #4" />
     <MESSAGE value="update CustomerController.php #2" />
     <MESSAGE value="feat(fixtures) close #5" />
     <MESSAGE value="feat(fixtures) close #8" />
     <MESSAGE value="updating jms and close #7" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating jms and close #7" />
+    <MESSAGE value="divert" />
+    <MESSAGE value="update( using jms serializer/delete customer) close #10 close #6" />
+    <MESSAGE value="update close #10 close #6" />
+    <MESSAGE value="no change" />
+    <MESSAGE value="init embed list customer #11" />
+    <MESSAGE value="fix close #9" />
+    <MESSAGE value="feat(access ) close #12" />
+    <MESSAGE value="(role changed )" />
+    <MESSAGE value="feat(link, pagination )" />
+    <MESSAGE value="feat(extra bundle )" />
+    <MESSAGE value="feat(groups)&#10; )" />
+    <MESSAGE value="fix(list phone) close #13" />
+    <MESSAGE value="setting NelmioApiDocBundle close #14" />
+    <MESSAGE value="updating bundles" />
+    <MESSAGE value="starting doc to customer #15" />
+    <MESSAGE value="updating doc #15" />
+    <MESSAGE value="add tag doc #15" />
+    <MESSAGE value="update doc #15" />
+    <MESSAGE value="diagram class , sequence, bdd #16" />
+    <option name="LAST_COMMIT_MESSAGE" value="diagram class , sequence, bdd #16" />
   </component>
 </project>
