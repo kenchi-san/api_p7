@@ -17,7 +17,7 @@ composer install
 Create a copy of .env file to .env.local with your own settings
 
 
-Initialize database
+##Initialize database
 
 ```
 php bin/console doctrine:database:create
@@ -26,7 +26,7 @@ php bin/console doctrine:migrations:migrate
 
 
 ```
-Setting jwt key
+##Setting jwt key
 ```
 generer one jwt key via openssl:
 mkdir -p config/jwt
@@ -47,6 +47,28 @@ or
 composer reset
 ```
 with "composer reset" you need to install "[symfony binary](https://symfony.com/doc/current/best_practices.html#use-the-symfony-binary-to-create-symfony-applications)"
+
+## POSTMAN SETTING
+
+[click here to access to postman configuration ](Postman%20folder/P7.postman_collection.json)
+
+
+
+## API DOC
+```
+use this uri: "api/doc" 
+```
+
+## login
+```
+use uri: api/login_check in postman
+
+use bellow information to make the conection
+ "username": "user1@gmail.com",
+ "password": "bibi"
+ copy the token and past it in "Authorize" in api doc
+```
+
 
 
 
