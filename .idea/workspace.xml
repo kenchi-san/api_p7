@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="fix(response to action) close #20">
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="updating README">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -494,7 +493,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636072766656</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fix(response to action) close #20">
+      <created>1636582652274</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1636582652274</updated>
+    </task>
+    <task id="LOCAL-00039" summary="postman shema to import to postman close #21">
+      <created>1636582743762</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1636582743762</updated>
+    </task>
+    <task id="LOCAL-00040" summary="updating README">
+      <created>1636584075258</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1636584075258</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,8 +533,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update User.php with UserInterface close #4" />
-    <MESSAGE value="update CustomerController.php #2" />
     <MESSAGE value="feat(fixtures) close #5" />
     <MESSAGE value="feat(fixtures) close #8" />
     <MESSAGE value="updating jms and close #7" />
@@ -538,6 +556,8 @@
     <MESSAGE value="update doc #15" />
     <MESSAGE value="diagram class , sequence, bdd #16" />
     <MESSAGE value="fix(response to action) close #20" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(response to action) close #20" />
+    <MESSAGE value="postman shema to import to postman close #21" />
+    <MESSAGE value="updating README" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating README" />
   </component>
 </project>
