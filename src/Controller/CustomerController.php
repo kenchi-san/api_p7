@@ -180,7 +180,7 @@ class CustomerController extends AbstractController
         $this->denyAccessUnlessGranted("CUSTOMER_DELETE",$customer);
         $manager->remove($customer);
         $manager->flush();
-        return new JsonResponse("", Response::HTTP_NOT_FOUND);
+        return new JsonResponse("", Response::HTTP_FOUND);
 
 
     }
