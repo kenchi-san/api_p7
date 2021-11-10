@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Hateoas\Configuration\Annotation as Hateoas;
 use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @Hateoas\Relation(
@@ -65,32 +66,38 @@ class Customer
     private ?int $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false)
+     * @Assert\NotBlank
      * @Groups({"customer:list","customer:detail","customer:add"})
      *
      */
     private ?string $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false)
+     * @Assert\NotBlank
      * @Groups({"customer:list","customer:detail","customer:add"})
      */
     private ?string $surname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=false)
+     * @Assert\NotBlank
+     * @Assert\Email(message = "The email '{{ value }}' is not a valid email.")
      * @Groups({"customer:detail","customer:add"})
      */
     private ?string $mail;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=false)
+     * @Assert\NotBlank
      * @Groups({"customer:detail","customer:add"})
      */
     private ?string $address;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank
      * @Groups({"customer:detail","customer:add"})
      */
     private ?int $phone;

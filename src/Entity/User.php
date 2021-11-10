@@ -10,6 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\Groups;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Hateoas\Configuration\Annotation as Hateoas;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -34,36 +35,45 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(min=4)
      * @Groups({"user","user:detail","customer:detail","customer:list"})
      */
     private ?string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Email()
      * @Groups({"user:detail"})
      */
     private ?string $email;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(min=4)
      * @Groups({"user","user:detail","customer:detail"})
      */
     private ?string $surname;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      * @Groups({"customer:embed"})
      */
     private ?string $password;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      * @Groups({"user:detail","customer:detail"})
      */
     private ?string $position_in_the_compagny;
 
     /**
      * @ORM\Column(type="json")
+     * @Assert\NotBlank
      * @Serializer\Exclude()
      */
     private array $roles = [];
