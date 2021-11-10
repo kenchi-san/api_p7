@@ -26,17 +26,6 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 class CustomerController extends AbstractController
 {
-    //TODO a retravailler
-    /**
-     * @param TokenStorageInterface $tokenStorageInterface
-     * @param JWTTokenManagerInterface $jwtManager
-     */
-    public function __construct(TokenStorageInterface $tokenStorageInterface, JWTTokenManagerInterface $jwtManager)
-    {
-        $this->jwtManager = $jwtManager;
-        $this->tokenStorageInterface = $tokenStorageInterface;
-    }
-
     /**
      * @Route ("api/customer", name="customer",methods={"GET"})
      * @OA\Response(
@@ -86,9 +75,9 @@ class CustomerController extends AbstractController
             $listCustomer->count()       // total collection size, optional, defaults to `null`
         );
         $jsonContent = $serializer->serialize($paginatedCollection, 'json', SerializationContext::create()->setGroups(['customer:list', 'Default']));
-        $JsonResponse = new JsonResponse($jsonContent, "200", ['Content-Type' => 'application/json'], true);
-        $JsonResponse->setMaxAge(3600);
-        return $JsonResponse;
+        $jsonResponse = new JsonResponse($jsonContent, "200", ['Content-Type' => 'application/json'], true);
+        $jsonResponse->setMaxAge(3600);
+        return $jsonResponse;
     }
 
     /**
@@ -160,16 +149,19 @@ class CustomerController extends AbstractController
      */
     public function add(Request $request, SerializerInterface $serializer, EntityManagerInterface $manager): Response
     {
-        if (!$this->getUser()) {
-            throw $this->createAccessDeniedException();
-        }
-        $customer = $serializer->deserialize($request->getContent(), Customer::class, 'json');
-        $customer->setMembershipNumber(uniqid());
-        $customer->setUser($this->getUser());
-        $manager->persist($customer);
-        $test = $serializer->serialize($customer, "json", SerializationContext::create()->setGroups(['groups' => 'customer:detail']));
-        $manager->flush();
-        return new JsonResponse($test, Response::HTTP_CREATED, [], true);
+
+
+            if (!$this->getUser()) {
+                throw $this->createAccessDeniedException();
+            }
+            $customer = $serializer->deserialize($request->getContent(), Customer::class, 'json');
+            $customer->setMembershipNumber(uniqid());
+            $customer->setUser($this->getUser());
+            $manager->persist($customer);
+            $test = $serializer->serialize($customer, "json", SerializationContext::create()->setGroups(['groups' => 'customer:detail']));
+            $manager->flush();
+            return new JsonResponse($test, Response::HTTP_CREATED, [], true);
+
     }
 
     /**
@@ -179,66 +171,18 @@ class CustomerController extends AbstractController
      * @param EntityManagerInterface $manager
      * @return Response
      * @OA\Tag(name="customer")
-     * @IsGranted("CUSTOMER_DELETE", subject="customer")
      */
     public function delete(Request $request, CustomerRepository $customerRepository, EntityManagerInterface $manager): Response
     {
 
+
         $customer = $customerRepository->find($request->get("id"));
+        $this->denyAccessUnlessGranted("CUSTOMER_DELETE",$customer);
         $manager->remove($customer);
         $manager->flush();
-        return new Response("", Response::HTTP_FOUND);
+        return new JsonResponse("", Response::HTTP_NOT_FOUND);
 
 
     }
 
-    /**
-     * @Route ("api/login_check", name="login",methods={"GET"})
-     *
-     * @OA\Parameter(
-     *     name="username",
-     *     required=true,
-     *     in="query",
-     *     description="The user name for login",
-     *     @OA\Schema(
-     *         type="string"
-     *     )
-     *   ),
-     * @OA\Parameter(
-     *     name="password",
-     *     in="query",
-     *     @OA\Schema(
-     *         type="string",
-     *     ),
-     *     description="The password for login in clear text",
-     *   ),
-     * @OA\Response(
-     *     response=200,
-     *     description="successful operation",
-     *     @OA\Schema(type="string"),
-     *     @OA\Header(
-     *       header="X-Rate-Limit",
-     *       @OA\Schema(
-     *           type="integer",
-     *           format="int32"
-     *       ),
-     *       description="calls per hour allowed by the user"
-     *     ),
-     *     @OA\Header(
-     *       header="X-Expires-After",
-     *       @OA\Schema(
-     *          type="string",
-     *          format="date-time",
-     *       ),
-     *       description="date in UTC when token expires"
-     *     )
-     *   ),
-     * @OA\Response(response=400, description="Invalid username/password supplied")
-     * )
-     */
-    public function login(Request $request, User $user, UserAuthenticatorInterface $authenticator, UserInterface $userInterface): JsonResponse
-    {
-        return $this->json([$authenticator->authenticateUser($request->get("username"))
-        ]);
-    }
 }

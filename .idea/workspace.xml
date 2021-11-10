@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="add tag doc #15">
-      <change beforePath="$PROJECT_DIR$/.idea/api_p7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api_p7.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="diagram class , sequence, bdd #16">
+      <change afterPath="$PROJECT_DIR$/src/EventSubscriber/ExceptionSubscriber.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/class/class.puml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/class/class.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/sequence/add_customer.puml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/sequence/add_customer.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/sequence/conection.puml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/sequence/conection.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UML/use case/use_case.puml" beforeDir="false" afterPath="$PROJECT_DIR$/UML/use case/use_case.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PhoneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PhoneController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ProductPhone.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ProductPhone.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,13 +26,17 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <interpreter composer="composer" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="UML Use Case" />
         <option value="UML Class" />
+        <option value="UML Sequence" />
+        <option value="UML MindMap" />
       </list>
     </option>
   </component>
@@ -45,7 +52,7 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 8.1">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.4">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
@@ -160,22 +167,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="DefaultPlantUmlFileTemplate" value="UML Class" />
+    <property name="DefaultPlantUmlFileTemplate" value="UML MindMap" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bin/php/php8.1/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/UML/sequence" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wamp64\www\api_p7\UML\sequence" />
       <recent name="D:\wamp64\www\api_p7\templates" />
       <recent name="D:\wamp64\www\api_p7" />
       <recent name="D:\wamp64\www\API-symfony" />
@@ -231,7 +239,12 @@
       <workItem from="1635340044404" duration="30929000" />
       <workItem from="1635499676785" duration="12488000" />
       <workItem from="1635626062043" duration="5075000" />
-      <workItem from="1636039686786" duration="5530000" />
+      <workItem from="1636039686786" duration="10334000" />
+      <workItem from="1636121605985" duration="3198000" />
+      <workItem from="1636385320007" duration="1191000" />
+      <workItem from="1636464914876" duration="8119000" />
+      <workItem from="1636498872738" duration="4180000" />
+      <workItem from="1636557270771" duration="968000" />
     </task>
     <task id="LOCAL-00001" summary="feat(request listPhone,detailPhone,entity,repo) close #1">
       <created>1633017315570</created>
@@ -478,7 +491,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635375804009</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="update doc #15">
+      <created>1636070042199</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1636070042199</updated>
+    </task>
+    <task id="LOCAL-00037" summary="diagram class , sequence, bdd #16">
+      <created>1636072766656</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1636072766656</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,8 +524,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix( update User) #4" />
-    <MESSAGE value="feat( jwt) #6" />
     <MESSAGE value="delete template" />
     <MESSAGE value="update User.php with UserInterface close #4" />
     <MESSAGE value="update CustomerController.php #2" />
@@ -522,6 +547,8 @@
     <MESSAGE value="starting doc to customer #15" />
     <MESSAGE value="updating doc #15" />
     <MESSAGE value="add tag doc #15" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tag doc #15" />
+    <MESSAGE value="update doc #15" />
+    <MESSAGE value="diagram class , sequence, bdd #16" />
+    <option name="LAST_COMMIT_MESSAGE" value="diagram class , sequence, bdd #16" />
   </component>
 </project>
