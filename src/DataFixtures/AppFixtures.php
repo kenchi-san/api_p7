@@ -55,14 +55,16 @@ class AppFixtures extends Fixture
 
 
         $p = 0;
+        $vi = 1;
         while ($p <= self::PRODUCT_FAKE_NUMBER) {
 
             $phone = new ProductPhone();
-            $phone->setName($AllPhones[array_rand($AllPhones,1)]);
+            $phone->setName($AllPhones[array_rand($AllPhones,1)].$vi);
             $phone->setDescription($this->faker->paragraph($nbSentences = 3, $variableNbSentences = true));
             $phone->setPrice(random_int(200, 1500));
             $manager->persist($phone);
             $p++;
+            $vi++;
 
         }
         $manager->flush();
@@ -73,13 +75,12 @@ class AppFixtures extends Fixture
 
         $c = 0;
         while ($c <= self::CUSTOMER_FAKE_NUMBER) {
-            $customer = new Customer();
+            $customer = new Customer($this->faker->swiftBicNumber);
             $customer->setName($this->faker->firstName);
             $customer->setSurname($this->faker->lastName);
             $customer->setAddress($this->faker->address);
             $customer->setMail($this->faker->email);
             $customer->setPhone(125698534);
-            $customer->setMembershipNumber($this->faker->swiftBicNumber);
 
             $user->addCustomer($customer);
             $c++;
