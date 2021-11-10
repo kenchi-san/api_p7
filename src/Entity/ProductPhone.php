@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\ProductPhoneRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Hateoas\Configuration\Annotation as Hateoas;
 use JMS\Serializer\Annotation as Serializer;
 use JMS\Serializer\Annotation\Groups;
 
