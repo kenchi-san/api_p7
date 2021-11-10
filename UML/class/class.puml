@@ -36,7 +36,7 @@ index()
 detail()
 }
 
-User "1" -- "1..*" Customer : contain
+User "1" -- "0..*" Customer : contain
 
 
 

@@ -12,14 +12,14 @@ alt login exist
     bdd->A : user
     A->A : checkPassword(user,mdp)
     alt valid password
-        A->U: ok
+        A->U: ok (200)
     else invalid password
-        A->U: invalidPassword
+        A->U: invalidPassword (401)
     end
 else invalid login
     bdd->A : null
 deactivate bdd
-    A->U: invalidLogin
+    A->U: invalidLogin (401)
     deactivate A
 end
 

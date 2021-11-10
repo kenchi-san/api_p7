@@ -15,9 +15,9 @@ alt valid data
     activate D
     D->BDD: insertion in the bdd
     deactivate D
-    C-->U: redirect response Json
+    C-->U: redirect response Json (302)
 else invalid
-  C-->U: Json message error
+  C-->U: Json message error (400)
 end
 
 @enduml
