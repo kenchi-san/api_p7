@@ -17,7 +17,7 @@ composer install
 Create a copy of .env file to .env.local with your own settings
 
 
-##Initialize database
+## Initialize database
 
 ```
 php bin/console doctrine:database:create
@@ -26,7 +26,7 @@ php bin/console doctrine:migrations:migrate
 
 
 ```
-##Setting jwt key
+## Setting jwt key
 ```
 generer one jwt key via openssl:
 mkdir -p config/jwt

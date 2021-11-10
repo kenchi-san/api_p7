@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="updating README">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="17ca5290-fc5e-4cee-8775-b52ee7a98501" name="Changes" comment="close #15" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -514,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636584075258</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="close #15">
+      <created>1636584101238</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1636584101238</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -533,7 +538,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(fixtures) close #5" />
     <MESSAGE value="feat(fixtures) close #8" />
     <MESSAGE value="updating jms and close #7" />
     <MESSAGE value="divert" />
@@ -558,6 +562,7 @@
     <MESSAGE value="fix(response to action) close #20" />
     <MESSAGE value="postman shema to import to postman close #21" />
     <MESSAGE value="updating README" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating README" />
+    <MESSAGE value="close #15" />
+    <option name="LAST_COMMIT_MESSAGE" value="close #15" />
   </component>
 </project>
